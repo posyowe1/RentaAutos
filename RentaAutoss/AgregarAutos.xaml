@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RentaAutoss.AgregarAutos"
+             Title="AgregarAutos">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label Text="Agregar" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Image x:Name="selecImagen" WidthRequest="200" HeightRequest="200"/>
+            <Button x:Name="btnFoto" Text="Foto" Clicked="btnFoto_Clicked"/>
+            <HorizontalStackLayout>
+                <Label Text="Placas" />
+                <Entry x:Name="ePlacas" Keyboard="Text" WidthRequest="300"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Marca" />
+                <Entry x:Name="eMarca" Keyboard="Text" WidthRequest="300"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Modelo" />
+                <Entry x:Name="eModelo" Keyboard="Text" WidthRequest="295"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Año" />
+                <Entry x:Name="eAño" Keyboard="Numeric" WidthRequest="320"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Color" />
+                <Entry x:Name="eColor" Keyboard="Text" WidthRequest="310"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Precio x dia" />
+                <Entry x:Name="ePrecioDias" Keyboard="Numeric" WidthRequest="270"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Button x:Name="btnGuardar" Text="Guardar" BackgroundColor="Aqua" Clicked="btnGuardar_Clicked"/>
+                <Button x:Name="btnModificar" Text="Modificar" BackgroundColor="Aquamarine" Clicked="btnModificar_Clicked"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

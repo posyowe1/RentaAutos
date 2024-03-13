@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:RentaAutoss"
+             x:Class="RentaAutoss.ListaAutos"
+             Title="ListaAutos">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Margin="1">
+            <Button x:Name="btnActualizar" Clicked="btnActualizar_Clicked" CommandParameter="{Binding .}" Text="Modificar" HeightRequest="50" TextColor="White" Background="Gray" CornerRadius="30" HorizontalOptions="FillAndExpand" />
+            <Button x:Name="btnRentar" Clicked="btnRentar_Clicked" Text="Rentar" HeightRequest="50" TextColor="White" Background="Gray" CornerRadius="30" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+        <ListView x:Name="autosListView" ItemsSource="{Binding Autos}" SeparatorVisibility="Default" HasUnevenRows="True" Margin="10" SeparatorColor="Gray" ItemSelected="autosListView_ItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid Margin="10, 5, 10, 5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                                <Image Grid.Column="0" Source="{Binding imgAuto, Converter={StaticResource ByteArrayToImageConverter}}" HeightRequest="100" WidthRequest="120" />
+
+                                <StackLayout Grid.Column="1" Margin="10,0,0,0">
+                                <Label Text="{Binding marca}" FontFamily="bold" TextColor="White" LineBreakMode="WordWrap" MaxLines="2" />
+                                <Label Text="{Binding modelo}" FontFamily="medium" TextColor="White" />
+                                <Label Text="{Binding placas}" FontFamily="medium" TextColor="White" />
+                                    <Label Text="{Binding precioxdia}" FontFamily="medium" TextColor="White" />
+                                </StackLayout>
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>
+</ContentPage>
